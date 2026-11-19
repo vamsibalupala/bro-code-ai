@@ -1,0 +1,47 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base Application Dark Charcoal Palette Theme -->
+    <style name="Theme.Bro" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Obsidian Surfaces -->
+        <item name="android:windowBackground">#151515</item>
+        <item name="colorSurface">#151515</item>
+        <item name="colorSurfaceVariant">#292929</item>
+        <item name="colorOnSurface">#FFFFFF</item>
+        <item name="colorOnSurfaceVariant">#CCCCCC</item>
+        
+        <!-- Burgundy Brand Palette -->
+        <item name="colorPrimary">#A9003D</item>
+        <item name="colorPrimaryVariant">#7D002D</item>
+        <item name="colorSecondary">#4A001C</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        
+        <!-- Gold PRO Accents -->
+        <item name="colorTertiary">#D4AF37</item>
+        <item name="colorOnTertiary">#000000</item>
+        
+        <!-- Typography & Status Bar -->
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorSecondary">#AAAAAA</item>
+        <item name="android:statusBarColor">#4A001C</item>
+        <item name="android:navigationBarColor">#151515</item>
+    </style>
+
+    <!-- Pitch Charcoal (OLED) Variant -->
+    <style name="Theme.Bro.CharcoalOLED" parent="Theme.Bro">
+        <item name="android:windowBackground">#080808</item>
+        <item name="colorSurface">#080808</item>
+        <item name="colorSurfaceVariant">#181818</item>
+        <item name="colorPrimary">#8A0032</item>
+        <item name="android:statusBarColor">#380015</item>
+        <item name="android:navigationBarColor">#080808</item>
+    </style>
+
+    <!-- Midnight Velvet Variant -->
+    <style name="Theme.Bro.MidnightVelvet" parent="Theme.Bro">
+        <item name="android:windowBackground">#0D0B0F</item>
+        <item name="colorSurface">#14101A</item>
+        <item name="colorSurfaceVariant">#241B2E</item>
+        <item name="colorPrimary">#990342</item>
+        <item name="android:statusBarColor">#3C0228</item>
+        <item name="android:navigationBarColor">#0D0B0F</item>
+    </style>
+</resources>

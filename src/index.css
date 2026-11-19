@@ -1,0 +1,151 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html,
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code,
+  pre,
+  .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+}
+
+/* Custom clean scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.45);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* BRO Hologram HUD Kinematics (Compositor-only transforms & opacity) */
+@keyframes broSpinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes broSpinReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes broLevitate {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes broScanSweep {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  85% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(110%);
+    opacity: 0;
+  }
+}
+
+@keyframes broSonicRipple {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.65;
+  }
+  100% {
+    transform: scale(1.75);
+    opacity: 0;
+  }
+}
+
+@keyframes broGlowPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.04);
+  }
+}
+
+.animate-bro-spin {
+  animation: broSpinSlow 24s linear infinite;
+}
+
+.animate-bro-spin-fast {
+  animation: broSpinSlow 10s linear infinite;
+}
+
+.animate-bro-spin-reverse {
+  animation: broSpinReverse 18s linear infinite;
+}
+
+.animate-bro-levitate {
+  animation: broLevitate 5.5s ease-in-out infinite;
+}
+
+.animate-bro-scan {
+  animation: broScanSweep 4.2s linear infinite;
+}
+
+.animate-bro-ripple {
+  animation: broSonicRipple 1.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.animate-bro-glow {
+  animation: broGlowPulse 3.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-bro-spin,
+  .animate-bro-spin-fast,
+  .animate-bro-spin-reverse,
+  .animate-bro-levitate,
+  .animate-bro-scan,
+  .animate-bro-ripple,
+  .animate-bro-glow {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Bro - I DON'T CARE",
+  "description": "End-to-end encrypted messaging, synced movie watch parties, live voice call translation (Telugu, Tamil, Kannada, English, Hindi), and GPS location sharing.",
+  "requestFramePermissions": ["geolocation", "microphone", "camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

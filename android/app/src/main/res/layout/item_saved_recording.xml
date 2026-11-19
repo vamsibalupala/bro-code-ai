@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Bro - "I DON'T CARE"
+  Card item layout for Saved Encrypted Call Recordings in RecyclerView
+  Surface: Deep charcoal (#1C1C1C / #262626)
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_recording"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+    app:cardBackgroundColor="#1C1C1C"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="2dp"
+    app:strokeColor="#2E2E2E"
+    app:strokeWidth="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="14dp">
+
+        <!-- Partner Profile Avatar -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_foreground"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+            app:strokeColor="#A9003D"
+            app:strokeWidth="1.5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <!-- Encrypted Lock Mini Badge -->
+        <ImageView
+            android:id="@+id/iv_e2ee_badge"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@android:drawable/ic_lock_lock"
+            app:tint="#10B981"
+            app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
+            app:layout_constraintEnd_toEndOf="@id/iv_avatar"
+            tools:ignore="ContentDescription" />
+
+        <!-- Partner / Call Name -->
+        <TextView
+            android:id="@+id/tv_caller_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:text="Rahul Sharma"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/iv_avatar"
+            app:layout_constraintTop_toTopOf="@id/iv_avatar"
+            app:layout_constraintEnd_toStartOf="@id/btn_play" />
+
+        <!-- Metadata row: Date, Duration, Call Type -->
+        <LinearLayout
+            android:id="@+id/layout_meta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@id/iv_avatar"
+            app:layout_constraintTop_toBottomOf="@id/tv_caller_name"
+            app:layout_constraintEnd_toStartOf="@id/btn_play">
+
+            <!-- Date -->
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nov 12, 2:45 PM"
+                android:textColor="#9E9E9E"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" • "
+                android:textColor="#666666"
+                android:textSize="12sp" />
+
+            <!-- Duration Badge -->
+            <TextView
+                android:id="@+id/tv_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="04:12"
+                android:textColor="#F43F5E"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" • "
+                android:textColor="#666666"
+                android:textSize="12sp" />
+
+            <!-- Call Type (Voice / Video) -->
+            <TextView
+                android:id="@+id/tv_call_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HD Voice"
+                android:textColor="#A1A1AA"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Bottom Container Info: AES-256-GCM & File Size -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@id/iv_avatar"
+            app:layout_constraintTop_toBottomOf="@id/layout_meta"
+            app:layout_constraintEnd_toStartOf="@id/btn_play">
+
+            <!-- File badge -->
+            <TextView
+                android:id="@+id/tv_file_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#262626"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:text=".brorec • AES-256-GCM"
+                android:textColor="#34D399"
+                android:textSize="10sp"
+                android:fontFamily="monospace" />
+
+            <TextView
+                android:id="@+id/tv_file_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="3.8 MB"
+                android:textColor="#71717A"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Circular Play / Decrypt Button -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_play"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:fabCustomSize="48dp"
+            app:backgroundTint="#A9003D"
+            app:tint="#FFFFFF"
+            android:src="@android:drawable/ic_media_play"
+            app:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="ContentDescription" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

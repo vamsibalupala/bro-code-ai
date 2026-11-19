@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#151515">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_burgundy_gradient">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Profile &amp; Settings"
+            app:titleTextColor="#FFFFFF"
+            app:navigationIcon="@drawable/ic_arrow_back" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Profile Info Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#292929"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="#383838"
+                app:strokeWidth="1dp"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BRO USER IDENTITY"
+                        android:textColor="#D4AF37"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.1" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="Display Name"
+                        app:boxStrokeColor="#A9003D"
+                        app:hintTextColor="#CCCCCC">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editDisplayName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#FFFFFF" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="Bro Tagline (Status)"
+                        app:boxStrokeColor="#A9003D"
+                        app:hintTextColor="#CCCCCC">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editBroTagline"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#FFFFFF" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="Phone Number"
+                        app:boxStrokeColor="#A9003D"
+                        app:hintTextColor="#CCCCCC">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#FFFFFF"
+                            android:inputType="phone" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/btnSaveProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Save Profile Changes"
+                        android:backgroundTint="#A9003D"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Dark Mode Themes Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#292929"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="#383838"
+                app:strokeWidth="1dp"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DARK MODE PALETTES"
+                        android:textColor="#D4AF37"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.1" />
+
+                    <RadioGroup
+                        android:id="@+id/rgThemes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp">
+
+                        <RadioButton
+                            android:id="@+id/rbThemeObsidian"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Obsidian Stream (#151515 / #292929 + #A9003D)"
+                            android:textColor="#FFFFFF" />
+
+                        <RadioButton
+                            android:id="@+id/rbThemeCharcoal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Pitch Charcoal OLED (#080808 + Ruby)"
+                            android:textColor="#FFFFFF" />
+
+                        <RadioButton
+                            android:id="@+id/rbThemeMidnight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Midnight Velvet (#0D0B0F + Deep Wine)"
+                            android:textColor="#FFFFFF" />
+                    </RadioGroup>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Language Preferences -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#292929"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="#383838"
+                app:strokeWidth="1dp"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SUPPORTED NATIVE LANGUAGES"
+                        android:textColor="#D4AF37"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.1" />
+
+                    <Spinner
+                        android:id="@+id/spinnerLanguages"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="8dp"
+                        android:backgroundTint="#FFFFFF" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Privacy & GPS Timers -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#292929"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="#383838"
+                app:strokeWidth="1dp"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LIVE GPS LOCATION SHARING TIMER"
+                        android:textColor="#D4AF37"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.1" />
+
+                    <RadioGroup
+                        android:id="@+id/rgLocationTimers"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb15Mins"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="15 Mins"
+                            android:textColor="#FFFFFF" />
+
+                        <RadioButton
+                            android:id="@+id/rb1Hour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="1 Hour"
+                            android:textColor="#FFFFFF"
+                            android:layout_marginStart="8dp" />
+
+                        <RadioButton
+                            android:id="@+id/rb8Hours"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="8 Hours (Pro)"
+                            android:textColor="#FFFFFF"
+                            android:layout_marginStart="8dp" />
+                    </RadioGroup>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchReadReceipts"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Read Receipts &amp; Double Checkmarks"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginTop="8dp" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchNotifications"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Push Notifications &amp; Alerts"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Google AdMob & RevenueCat Monetization -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#292929"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="#D4AF37"
+                app:strokeWidth="1dp"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvProStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Free Tier (Ad-Supported)"
+                        android:textColor="#D4AF37"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvAdImpressionsRemaining"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5 of 5 rewarded ads left today"
+                        android:textColor="#AAAAAA"
+                        android:textSize="12sp"
+                        android:layout_marginTop="4dp" />
+
+                    <Button
+                        android:id="@+id/btnWatchAd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Watch Rewarded Video (+15m / HD Pass)"
+                        android:backgroundTint="#D4AF37"
+                        android:textColor="#000000"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnRestorePurchases"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Restore Purchases (RevenueCat)"
+                        android:textColor="#CCCCCC"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
